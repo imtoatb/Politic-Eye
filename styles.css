@@ -6,14 +6,21 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #a9d2fb;
+    background-color: #163767;
 }
 .container {
     text-align: center;
 }
 h1 {
-    color: #333;
+    color: #ffffff;
 }
+
+.slogan{
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
 .search-box {
     margin-top: 20px;
 }
@@ -27,7 +34,7 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #377fbc;
     color: white;
     border: none;
     border-radius: 5px;
