@@ -60,6 +60,15 @@
         fail:
         if ($fail == 0) {
             foreach ($Politician as $pol) {
+                $SourcesQuery = $mysqlClient->prepare("SELECT * FROM sources WHERE ID_Politician=".$pol["ID_Politician"].";"); //Other sql request for sources searching.
+                try {
+                    $SourcesQuery->execute();
+                    error_log("Sources on ".$_GET["Person"]." retrieved;", 3, "fiches_log.txt");
+                } catch(Exception $e) {
+                    error_log("Database query failed | ".$e->getMessage().";\n", 3, "fiches_logs.txt");
+                }
+
+                $Sources = $SourcesQuery->fetchAll(); //Retrieves sources in array.
         ?>
 
         <aside>
@@ -92,7 +101,19 @@
 
             <h3>Sources</h3>
 
-            <p>Sample, will be replaced by a php foreach loop</p>
+            <ol>
+                <?php 
+                
+                if (empty($Sources)) {
+                    echo "<li>Error : no sources could have been retrieved by the server.</li>";
+                } else {
+                    foreach ($Sources as $source) {
+                        echo "<li><a href='".$source["Link"]."'>".$source["Source_Name"]."</a></li>";
+                    }
+                }
+                
+                ?>
+            </ol>
 
 
         </section>
