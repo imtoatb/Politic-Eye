@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial_scale=1.0"/>
-        <title>Report on First Last</title>
+        <title>Report on <?php echo $_GET["Person"]?></title>
         <link href="fiche.css" rel="stylesheet"/>
     </head>
 
@@ -54,7 +54,7 @@
             $fail = 1; //Checks if the SQL query has returned an empty array. If yes, triggers fail routine.
             error_log("Error | Incorrect Politician name or not present in database;\n", 3, "fiches_logs.txt");
         } else {
-            error_log("Empty array test passed;\n", 3, "fiches_log.txt");
+            error_log("Empty array test passed;\n", 3, "fiches_logs.txt");
         }
 
         fail:
@@ -63,16 +63,26 @@
                 $SourcesQuery = $mysqlClient->prepare("SELECT * FROM sources WHERE ID_Politician=".$pol["ID_Politician"].";"); //Other sql request for sources searching.
                 try {
                     $SourcesQuery->execute();
-                    error_log("Sources on ".$_GET["Person"]." retrieved;", 3, "fiches_log.txt");
+                    error_log("Sources on ".$_GET["Person"]." retrieved;\n", 3, "fiches_logs.txt");
                 } catch(Exception $e) {
-                    error_log("Database query failed | ".$e->getMessage().";\n", 3, "fiches_logs.txt");
+                    error_log("Database Source query failed | ".$e->getMessage().";\n", 3, "fiches_logs.txt");
                 }
 
                 $Sources = $SourcesQuery->fetchAll(); //Retrieves sources in array.
+
+                $ImgQuery = $mysqlClient->prepare("SELECT * FROM images WHERE ID_Image=".$pol["ID_Politician"].";"); //Other sql request for image searching.
+                try {
+                    $ImgQuery->execute();
+                    error_log("Image of ".$_GET["Person"]." retrieved;\n", 3, "fiches_logs.txt");
+                } catch(Exception $e) {
+                    error_log("Database Image query failed | ".$e->getMessage().";\n", 3, "fiches_logs.txt");
+                }
+
+                $Img = $ImgQuery->fetch(); //Retrieves image in array.
         ?>
 
         <aside>
-            <img src="patate.png" alt="Totoletoto">
+            <img src=<?php echo "./".$Img["Path"]; ?> alt="<?php echo "".$Img["Alt"]."";?>">
             <br/>
             <span class="field">First Name :</span> <p><?php echo $pol["First_Name"]?></p>
             <span class="field">Last Name :</span> <p><?php echo $pol["Last_Name"]?></p>
@@ -108,7 +118,7 @@
                     echo "<li>Error : no sources could have been retrieved by the server.</li>";
                 } else {
                     foreach ($Sources as $source) {
-                        echo "<li><a href='".$source["Link"]."'>".$source["Source_Name"]."</a></li>";
+                        echo "<li><a href='".$source["Link"]."'>".$source["Title"]."</a>, ".$source["Source_Name"]."</li>";
                     }
                 }
                 
