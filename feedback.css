@@ -1,0 +1,87 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/12/08/13/49/pencil-1891732_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big {
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 20px;
+    margin: 8px 0;
+}
+
+.smol {
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 20px;
+    margin: 8px 0;
+}
+
+textarea {
+    width: 80%;
+    box-sizing: border-box;
+    height: 150px;
+    resize: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+#form {
+    margin: 10%;
+    justify-content: center;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3em;
+    padding-right: 3em;
+    background-color: #f8f8f8;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+}
+
+label {
+    text-decoration: underline;
+}
+
+input[type=submit] {
+    margin: 1%;
+    margin-left: 4px;
+    border-radius: 3px;
+    border: none;
+    background-color: green;
+    color: white;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    margin: 1%;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(209, 203, 203);
+    color: white;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+fieldset {
+    width: 77.4%;
+    margin-top: 1%;
+    border-radius: 4px;
+}
