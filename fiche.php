@@ -5,13 +5,12 @@
         <meta name="viewport" content="width=device-width, initial_scale=1.0"/>
         <title>Report on <?php echo $_GET["Person"]?></title>
         <link href="fiche.css" rel="stylesheet"/>
+        <style><?php include("fiche.css"); ?></style>
     </head>
 
     <body>
         
-        <header>
-
-        </header>
+        <?php include("header.html"); ?>
 
         <?php 
         error_log("\n\n--------- [REPORT ACCESS START ".date(DATE_RFC2822)."] ---------\n", 3, "fiches_logs.txt");
@@ -81,64 +80,65 @@
                 $Img = $ImgQuery->fetch(); //Retrieves image in array.
         ?>
 
-        <aside>
-            <img src=<?php echo "./".$Img["Path"]; ?> alt="<?php echo "".$Img["Alt"]."";?>">
-            <br/>
-            <span class="field">First Name :</span> <p><?php echo $pol["First_Name"]?></p>
-            <span class="field">Last Name :</span> <p><?php echo $pol["Last_Name"]?></p>
-            <span class="field">Date of Birth :</span> <p><?php echo $pol["DoB"]?></p>
-            <span class="field">Party :</span> <p><?php echo $pol["Party"]?></p>
-        </aside>
+        <section id="fiche">
+            <aside>
+                <img src=<?php echo "./".$Img["Path"]; ?> alt="<?php echo "".$Img["Alt"]."";?>">
+                <br/>
+                <span class="field">First Name :</span> <?php echo $pol["First_Name"]?><br/>
+                <span class="field">Last Name :</span> <?php echo $pol["Last_Name"]?><br/>
+                <span class="field">Date of Birth :</span> <?php echo $pol["DoB"]?><br/>
+                <span class="field">Party :</span> <?php echo $pol["Party"]?><br/>
+            </aside>
 
-        <section id="longcontent">
-            <h1>Report on <?php echo $pol["First_Name"]?> <?php echo $pol["Last_Name"]?></h1>
+            <div id="longcontent">
+                <h1>Report on <?php echo $pol["First_Name"]?> <?php echo $pol["Last_Name"]?></h1>
 
-            <h2>Mandates held</h2>
+                <h2>Mandates held</h2>
 
-            <p><?php echo $pol["Mandates"]?></p>
+                <p><?php echo $pol["Mandates"]?></p>
 
-            <h2>Conflicts of Interests</h2>
+                <h2>Conflicts of Interests</h2>
 
-            <p><?php echo $pol["CoI"]?></p>
+                <p><?php echo $pol["CoI"]?></p>
 
-            <h2>Condemnations</h2>
+                <h2>Condemnations</h2>
 
-            <p><?php echo $pol["Condemnations"]?></p>
+                <p><?php echo $pol["Condemnations"]?></p>
 
-            <h2>Scandals</h2>
+                <h2>Scandals</h2>
 
-            <p><?php echo $pol["Scandals"]?></p>
+                <p><?php echo $pol["Scandals"]?></p>
 
-            <h3>Sources</h3>
+                <h3>Sources</h3>
 
-            <ol>
-                <?php 
+                <ol>
+                    <?php 
                 
-                if (empty($Sources)) {
-                    echo "<li>Error : no sources could have been retrieved by the server.</li>";
-                } else {
-                    foreach ($Sources as $source) {
-                        echo "<li><a href='".$source["Link"]."'>".$source["Title"]."</a>, ".$source["Source_Name"]."</li>";
+                    if (empty($Sources)) {
+                        echo "<li>Error : no sources could have been retrieved by the server.</li>";
+                    } else {
+                        foreach ($Sources as $source) {
+                            echo "<li><a href='".$source["Link"]."'>".$source["Title"]."</a>, ".$source["Source_Name"]."</li>";
+                        }
                     }
-                }
                 
-                ?>
-            </ol>
+                    ?>
+                </ol>
 
 
+            </div>
         </section>
+        
 
         <?php 
             }
         } else { ?>
-            <p><?php echo "Error : either the database has failed, the person you're looking for doesn't exist or you have accessed wrongly this page"; ?></p>
+            <p id="fiche"><?php echo "Error : Either the database has failed, the person you're looking for doesn't exist or you have accessed wrongly this page. Please contact the dev team if something seems odd."; ?></p>
         <?php }
         error_log("--------- [REPORT ACCESS END ".date(DATE_RFC2822)."] ---------\n", 3, "fiches_logs.txt");
         ?>
 
-        <footer>
-
-        </footer>
+        <?php include("footer.html"); ?>
 
     </body>
 </html>

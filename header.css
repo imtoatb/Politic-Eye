@@ -9,6 +9,7 @@ header {
     justify-content:space-between;
     position: sticky;
     background-color: white;
+    border-radius: 4px;
 }
 
 #title {
@@ -34,7 +35,7 @@ nav > ul > li {
     float: right;
 }
 
-li > a {
+.navlink {
     display: block;
     text-align: center;
     padding-left: 16px;
@@ -45,7 +46,7 @@ li > a {
     color: inherit;
 }
 
-li > a:hover {
+.navlink:hover {
     background-color: gray;
 }
 
@@ -61,5 +62,5 @@ footer {
     text-decoration: underline;
     padding-top: 3%;
     padding-bottom: 3%;
-    margin: 0;
+    border-radius: 4px;
 }
