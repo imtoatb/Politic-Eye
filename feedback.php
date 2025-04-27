@@ -9,12 +9,10 @@
 
     <body>
 
-        <header>
-
-        </header>
+        <?php include("header.html"); ?>
 
         <section id="form">
-            <h1>Have a feedback ? Share with us !</h1>
+            <h2>Have a feedback ? Share with us !</h2>
 
             <form action="feedback_submit.php" method="post" enctype="multipart/form-data">
                 <label for="Name">Name or Pseudonym :</label><br>
@@ -53,9 +51,7 @@
             </form>
         </section>
 
-        <footer>
-
-        </footer>
+        <?php  include("footer.html"); ?>
 
     </body>
 </html>
