@@ -9,20 +9,7 @@
 
     <body>
         
-        <header>
-
-        </header>
-
-        <?php 
-            //Détruit les sessions php ouvertes depuis longtemps.
-            /*if (isset($_SESSION['start']) && (time() - $_SESSION['start'] > 18000)) {
-                session_unset();
-                session_destroy();
-                error_log("Session expirée (connexion + de 30 minutes); \n", 3, "main_log.txt");
-            } elseif !isset($_SESSION['start']) {
-                session_start(['cookie_lifetime' => 86400]);
-            }*/
-        ?>
+        <?php include("header.html"); ?>
 
         <h1>
             "Hello"
@@ -30,9 +17,7 @@
 
         <a href="fiche.php?Person=Hazebrouck">Fiche de Laurent Hazebrouck</a>
 
-        <footer>
-
-        </footer>
+        <?php include("footer.html"); ?>
 
     </body>
 </html>
