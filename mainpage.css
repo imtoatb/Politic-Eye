@@ -1,5 +1,9 @@
 /* styles.css */
 body {
+    background-color: #163767;
+}
+
+#main_content {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -7,12 +11,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #163767;
 }
 .container {
     text-align: center;
 }
-h1 {
+
+#welcome {
     color: #ffffff;
 }
 
