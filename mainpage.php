@@ -14,27 +14,40 @@
 
         <section id="main_content">
             <div class="container">
-                <h1 id="welcome">Bienvenue sur Politic'Eye</h1>
-                <p class="slogan">Analysez et explorez la politique en un clic</p>
+                <h1 id="welcome">Welcome to Politic'Eye</h1>
+                <p class="slogan">Analyze and explore politics in a few clics</p>
                 <div class="search-box">
-                    <input type="text" placeholder="Rechercher un sujet politique...">
-                    <button>Rechercher</button>
+                    <input type="text" placeholder="Look for something...">
+                    <button>Search</button>
                 </div>
             </div>
 
-            <!-- Rewrite in english + replace search by list access button -->
+            <!-- Rewrite in english + add onclick event on search button to realize ajax search request, getting from a backend script the name in a link of the concerned politican if successful -->
 
             <div class="white-section">
-                <h2>À propos de Politic'Eye</h2>
-                <p class="p1">Politic'Eye est une plateforme dédiée à l'analyse et à la compréhension des enjeux politiques contemporains. Grâce à notre technologie avancée, nous vous offrons des analyses approfondies et des perspectives uniques sur les sujets qui façonnent notre monde.</p>
-                <p class="p2">Notre mission est de rendre l'information politique accessible et compréhensible pour tous. Que vous soyez un étudiant, un professionnel ou simplement curieux de la politique, Politic'Eye est là pour vous aider à naviguer dans le paysage complexe de l'actualité politique.</p>
-                <p class="p3">Nous croyons en l'importance de l'éducation politique et de la transparence. C'est pourquoi nous nous engageons à fournir des analyses impartiales et basées sur des données fiables.</p>
-                <p class="p4">Rejoignez-nous dans notre mission d'éclairer le débat public et de promouvoir une citoyenneté informée.</p>
+                <h2>À propos</h2>
+                <p class="p1">Politic'eye is a platform dedicated to the analysis and understanding of modern politic's stakes. Thanks to our data, we can provide insights into the hallways of power, and help your future decision making for your country.</p>
+                <p class="p2">Our goal is to make political information accessible and digestible for all. Whether you are a student, a professionnal, or someone uninterested in the domain, this project is a lighthouse to shine light on current actions and the past's archives.</p>
+                <p class="p3">We believe in the power of political education, and the importance of transparency in public debates. We therefore uphold qualitative standards to provide impartial analysis, reliable data and comprehensive aggregates with tracable sources.</p>
+                <p class="p4">Help us promoting an informed citizenship and make transparency go forth.</p>
             </div>
 
             <!-- Add featured section where there are some reports pinned here following recent news, manual admin choice -->
 
-            <a href="fiche.php?Person=Hazebrouck">Fiche de Laurent Hazebrouck</a>
+            <div id="selection">
+                <h2>Admin's selection</h2>
+
+                <figure>
+                    <a href="fiche.php?Person=Hazebrouck"><img src="./images/Hazebrouck.jfif" alt="Photo de Laurent Hazebrouck"></a>
+                    <figcaption>Laurent Hazebrouck</figcaption>
+                </figure>
+
+                <figure>
+                    <a href="fiche.php?Person=De%20Langlade%20Béchu"><img src="./images/De_Langlade.jfif" alt="Photo de Laurent Hazebrouck"></a>
+                    <figcaption>Estrée de Langlade Béchu</figcaption>
+                </figure>
+            </div>
+
         </section>
 
         <?php include("footer.html"); ?>
