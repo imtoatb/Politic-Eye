@@ -6,6 +6,7 @@
         <title>Politic'Eye</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
         <style><?php include("mainpage.css") ?></style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -17,8 +18,8 @@
                 <h1 id="welcome">Welcome to Politic'Eye</h1>
                 <p class="slogan">Analyze and explore politics in a few clics</p>
                 <div class="search-box">
-                    <input type="text" placeholder="Look for something...">
-                    <button>Search</button>
+                    <input type="text" id="searchbox" placeholder="Look for something...">
+                    <button id="trigger">Search</button>
                 </div>
             </div>
 
@@ -51,6 +52,7 @@
         </section>
 
         <?php include("footer.html"); ?>
+        <script><?php include("search.js"); ?></script>
 
     </body>
 </html>

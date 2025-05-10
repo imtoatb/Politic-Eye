@@ -22,14 +22,10 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 4px;
-}
-
-#welcome {
     color: #ffffff;
 }
 
 .slogan{
-    color: #ffffff;
     font-size: 24px;
     margin-bottom: 20px;
 }
