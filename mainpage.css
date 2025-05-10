@@ -1,0 +1,100 @@
+/* styles.css */
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2020/01/23/20/57/berlin-4788732_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main_content {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 15em;
+}
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+}
+
+#welcome {
+    color: #ffffff;
+}
+
+.slogan{
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #377fbc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.white-section {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px #163767;
+    display: block; 
+    clear: both;
+}
+
+#selection {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 15em;
+}
+
+#selection h2 {
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: 2.5em;
+    left: 2em;
+}
+
+#selection img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    align-content: center;
+}

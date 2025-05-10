@@ -9,13 +9,17 @@
 
     <body>
 
-        <header>
-
-        </header>
-
+        <section id="status">
         <h2>Retour d'information sur l'état</h2>
 
         <?php 
+
+        if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+            http_response_code(403); //Detects illegal access by seeing if accessed via POST method, else yields 403
+            echo "<h1>403 Forbidden</h1><p>You have performed unauthorized access to this page. If this is unexpected, contact dev team.<p>";
+            echo "<script>setTimeout(\"location.href = 'feedback.php';\",5500);</script>";
+            exit;
+        }
 
         error_log("\n\n-------- [FEEDBACK SUBMISSION START ".date(DATE_RFC2822)."] --------\n", 3, "feedback_submit_logs.txt"); 
         $fail = 0; //Failure variable
@@ -103,16 +107,16 @@
         ?>
 
         <?php fail:
-        if ($fail == 0) { ?>
+        if ($fail == 0) { 
+            echo "<script>setTimeout(\"location.href = 'mainpage.php';\",5500);</script>"; //Sends back to main page with a small delay?>
         <p>Données envoyées !</p>
-        <?php } else {?>
+        <?php } else {
+            echo "<script>setTimeout(\"location.href = 'feedback.php';\",5500);</script>";?>
         <p>Erreur : la base de données n'a pas pu être mise à jour. Il est possible que vous n'ayez pas rempli tous les champs requis. Si ce n'est pas le cas, veuillez contacter un administrateur.</p>
         <?php } // Displays different messages based on completion of the request 
-        error_log("-------- [FEEDBACK SUBMISSION END ".date(DATE_RFC2822)."] --------\n", 3, "feedback_submit_logs.txt"); ?> 
-
-        <footer>
-
-        </footer>
+        error_log("-------- [FEEDBACK SUBMISSION END ".date(DATE_RFC2822)."] --------\n", 3, "feedback_submit_logs.txt"); 
+        ?> 
+        </section>
 
     </body>
 </html>
