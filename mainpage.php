@@ -21,6 +21,7 @@
                     <input type="text" id="searchbox" placeholder="Look for something...">
                     <button id="trigger">Search</button>
                 </div>
+                <div id="js_content"></div>
             </div>
 
             <!-- Rewrite in english + add onclick event on search button to realize ajax search request, getting from a backend script the name in a link of the concerned politican if successful -->
