@@ -79,7 +79,7 @@
         
         try { //Attempts to connect to server database.
             $mysqlClient = new PDO("mysql:host=localhost:3307;dbname=politic_backend;charset=utf8", "root", "root");
-            error_log("PDO set up;\n", 3, "fiches_logs.txt");
+            error_log("PDO set up;\n", 3, "feedback_submit_logs.txt");
         } catch(Exception $e) { //If fails, logs it in and goes to the routine at the end of the page.
             error_log("PDO or connection error | ".$e->getMessage().";\n", 3, "feedback_submit_logs.txt");
             $fail = 1;
