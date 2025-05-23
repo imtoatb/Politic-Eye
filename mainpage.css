@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 15em;
+    margin-top: 17em;
 }
 .container {
     text-align: center;
@@ -22,14 +22,10 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 4px;
-}
-
-#welcome {
     color: #ffffff;
 }
 
 .slogan{
-    color: #ffffff;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -80,7 +76,7 @@ button:hover {
     padding: 50px;
     text-align: center;
     width: 80%;
-    margin-bottom: 15em;
+    margin-bottom: 16em;
 }
 
 #selection h2 {
@@ -97,4 +93,15 @@ button:hover {
     width: 150px;
     height: 150px;
     align-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
+}
+
+#js_content {
+    height: 100%;
+    overflow: auto;
 }
